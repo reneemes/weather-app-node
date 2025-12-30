@@ -1,5 +1,4 @@
 body {
-  box-sizing: border-box;
   color: #333333;
   background-color: #e0f0f7;
   font-family: arial;
@@ -14,13 +13,6 @@ body {
 
 .main-content {
   flex-grow: 1;
-}
-
-footer {
-  color: #888888;
-  border-top: 1px solid #eeeeee;
-  margin-top: 16px;
-  padding: 16px 0;
 }
 
 header {
@@ -39,10 +31,6 @@ header a {
   text-decoration: none;
 }
 
-.portrait {
-  width: 250px;
-}
-
 input {
   border: 1px solid #cccccc;
   padding: 8px;
@@ -54,4 +42,57 @@ button {
   background: #888888;
   color: white;
   padding: 8px;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888888;
+  border-top: 1px solid #888888;
+  margin-top: 16px;
+  padding: 16px 0;
+}
+
+.footer__links a {
+  color: #888888;
+  text-decoration: none;
+}
+
+.weather-form__options {
+  width: 60%;
+  margin: 20px 0;
+}
+
+.about__body {
+  font-size: 1.2rem;
+}
+
+.about__body a {
+  color: black;
+}
+
+.portrait {
+  width: 250px;
+}
+
+.help-info {
+  margin: 10% 0;
+}
+
+.help-info__body {
+  font-size: 1.2rem;
+}
+
+.help-info__body a {
+  color: black;
+}
+
+.help-info__question {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.help-info__faq dd {
+  margin-left: 1.5rem;
 }

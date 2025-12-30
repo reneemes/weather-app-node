@@ -5,14 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css"/>  
   <link rel="icon" href="/img/weather.png">
+  <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
   <title>About</title>
 </head>
 <body>
   <div class="main-content">
     {{>header}}
 
-    <p>This site was created by Renee Messersmith. It uses data from weatherstack.com and positionstack.com!</p>
-    <img class="portrait" src="./img/Renee Messersmith.jpg"/>
+    <section class="about">
+      <h2 class="about__title">About This App</h2>
+      
+      <p class="about__body">
+        This weather application was created by <strong>Renee Messersmith</strong>
+        as a project to practice building web applications with Node.js and working with
+        third-party APIs.
+      </p>
+
+      <p class="about__body">
+        The app allows users to search for locations and view current weather
+        conditions using real-time data. It focuses on simplicity, accessibility,
+        and clear presentation of information.
+      </p>
+
+      <p class="about__body">
+        Weather data is provided by 
+        <a href="https://weatherstack.com/" target="_blank" rel="noopener">
+          Weatherstack</a>, and location data is provided by 
+        <a href="https://positionstack.com/" target="_blank" rel="noopener">
+          Positionstack</a>.
+      </p>
+
+      <p class="about__body">
+        This project was built using modern web technologies such as HTML, 
+        CSS, JavaScript, Node.js, and server-side rendering with Handlebars.
+      </p>
+
+      <img
+        class="portrait"
+        src="./img/Renee Messersmith.jpg"
+        alt="Portrait of Renee Messersmith"
+      />
+    </section>
   </div>
 
   {{>footer}}

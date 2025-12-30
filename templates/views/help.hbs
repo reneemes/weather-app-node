@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/help.css"/>
+  <link rel="stylesheet" href="/css/styles.css"/>
   <link rel="icon" href="/img/weather.png">
+  <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
   <title>Help</title>
 </head>
 <body>
@@ -12,24 +13,98 @@
     {{>header}}
 
     <article class="help-info">
-      <h2 class="help-info__title">{{message}}</h2>
+      <h2 class="help-info__title">
+        <i class="fa-solid fa-cloud-sun" aria-hidden="true"></i>
+        {{message}}
+      </h2>
       
       <p class="help-info__body">
-        Enter the location you wish to check the weather for.
-        The API will convert the location into coordinates which is used to retrieve
-        the weather information from that area.
+        Enter the name of a city, town, or location to check the current weather.
+        The app converts the location into geographic coordinates to retrieve
+        accurate weather data for that area.
       </p>
       <p class="help-info__body">
-        You can select which unit of measurement you would like to view the weather data in.
-        Just select from Fahrenheit, Celsius, or Scientific. 
+        You can choose how weather data is displayed by selecting a unit of measurement.
+        Available options include Fahrenheit, Celsius, and Scientific units.
+      </p>
+      <p class="help-info__body">
+        Weather details may include temperature, conditions, wind speed,
+        humidity, and forecast information depending on availability.
       </p>
     </article>
-    <article>
-      <h3>Info About the APIs</h3>
-      <p>
-        
+
+    <article class="help-info" aria-labelledby="faq-title">
+      <h3 id="faq-title" class="help-info__title">
+        <i class="fa-solid fa-circle-question" aria-hidden="true"></i>
+        Frequently Asked Questions
+      </h3>
+
+      <dl class="help-info__faq">
+
+        <dt class="help-info__question">
+          Why can’t my location be found?
+        </dt>
+        <dd class="help-info__body">
+          Make sure the location name is spelled correctly or try searching for
+          a nearby city. Some small or remote locations may not be available.
+        </dd>
+
+        <dt class="help-info__question">
+          Why is the weather not updating?
+        </dt>
+        <dd class="help-info__body">
+          Check your internet connection and refresh the page. Weather data
+          updates depend on the availability of the external services.
+        </dd>
+
+        <dt class="help-info__question">
+          What does “Scientific” units mean?
+        </dt>
+        <dd class="help-info__body">
+          Scientific units display temperature in Kelvin and other measurements
+          commonly used in scientific data.
+        </dd>
+
+        <dt class="help-info__question">
+          Is my location data stored?
+        </dt>
+        <dd class="help-info__body">
+          No. Location data is only used to retrieve weather information and
+          is not stored or shared.
+        </dd>
+
+      </dl>
+    </article>
+
+    <article class="help-info">
+      <h3 class="help-info__title">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        Info About the APIs
+      </h3>
+      <p class="help-info__body">
+        Weather data is provided by 
+        <a href="https://weatherstack.com/" 
+            target="_blank" 
+            rel="noopener" 
+            aria-label="Visit Weatherstack website (opens in a new tab)">
+          Weatherstack
+        </a>.
+      </p>
+      <p class="help-info__body">
+        Location and geocoding data is provided by 
+        <a href="https://positionstack.com/" 
+            target="_blank" 
+            rel="noopener"
+            aria-label="Visit Positionstack website (opens in a new tab)">
+          Positionstack
+        </a>.
+      </p>
+      <p class="help-info__body">
+        If a location cannot be found or data is unavailable, please double-check
+        your spelling or try a nearby city.
       </p>
     </article>
+
   </div>
 
   {{>footer}}

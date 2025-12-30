@@ -5,28 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/styles.css"/>
   <link rel="icon" href="/img/weather.png">
-
+  <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
   <title>Weather</title>
 </head>
 <body>
   <div class="main-content">
     {{>header}}
-    <p>Use this site to get your weather.</p>
+    
+    <section class="weather-intro">
+      <h2>Check the Weather</h2>
+      <p>Enter a city or location below to get the current weather conditions.</p>
+    </section>
 
-    <form class="weather-form">
-      <input placeholder="Location">
-      <button>Search</button>
+    <form class="weather-form" aria-label="Weather search form">
+      <input
+        id="location"
+        name="location"
+        placeholder="Enter a city or location"
+        autocomplete="off"
+        required
+      >
+      <button type="submit">Search</button>
       
-      <div class="weather-form__options">
+      <fieldset class="weather-form__options">
+        <legend>Temperature Units</legend>
+
         <input type="radio" id="fahrenheit" name="unit" value="fahrenheit" checked>
-        <label for="fahrenheit">Fahrenheit</label>
+        <label for="fahrenheit">Fahrenheit (°F)</label>
 
         <input type="radio" id="celsius" name="unit" value="celsius">
-        <label for="celsius">Celsius</label>
+        <label for="celsius">Celsius (°C)</label>
 
         <input type="radio" id="scientific" name="unit" value="scientific">
-        <label for="scientific">Scientific</label>
-      </div>
+        <label for="scientific">Scientific (K)</label>
+      </fieldset>
     </form>
 
     <p id="message-one"></p>

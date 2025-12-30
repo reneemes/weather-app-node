@@ -10,11 +10,12 @@ weatherForm.addEventListener('submit', (e) => {
   e.preventDefault();
 
   const location = search.value;
+  const unit = document.querySelector('input[name="unit"]:checked').value;
 
   messageOne.textContent = 'Loading...';
   messageTwo.textContent = '';
 
-  fetch(`/weather?address=${location}`)
+  fetch(`/weather?address=${location}&unit=${unit}`)
   .then((response) => response.json())
   .then((data) => {
     if (data.error) {
