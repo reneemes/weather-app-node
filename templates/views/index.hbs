@@ -13,9 +13,20 @@
     {{>header}}
     <p>Use this site to get your weather.</p>
 
-    <form>
+    <form class="weather-form">
       <input placeholder="Location">
       <button>Search</button>
+      
+      <div class="weather-form__options">
+        <input type="radio" id="fahrenheit" name="unit" value="fahrenheit" checked>
+        <label for="fahrenheit">Fahrenheit</label>
+
+        <input type="radio" id="celsius" name="unit" value="celsius">
+        <label for="celsius">Celsius</label>
+
+        <input type="radio" id="scientific" name="unit" value="scientific">
+        <label for="scientific">Scientific</label>
+      </div>
     </form>
 
     <p id="message-one"></p>

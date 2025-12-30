@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/styles.css"/>
+  <link rel="stylesheet" href="/css/help.css"/>
   <link rel="icon" href="/img/weather.png">
   <title>Help</title>
 </head>
@@ -11,7 +11,25 @@
   <div class="main-content">
     {{>header}}
 
-    <p>{{message}}</p>
+    <article class="help-info">
+      <h2 class="help-info__title">{{message}}</h2>
+      
+      <p class="help-info__body">
+        Enter the location you wish to check the weather for.
+        The API will convert the location into coordinates which is used to retrieve
+        the weather information from that area.
+      </p>
+      <p class="help-info__body">
+        You can select which unit of measurement you would like to view the weather data in.
+        Just select from Fahrenheit, Celsius, or Scientific. 
+      </p>
+    </article>
+    <article>
+      <h3>Info About the APIs</h3>
+      <p>
+        
+      </p>
+    </article>
   </div>
 
   {{>footer}}
