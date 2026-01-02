@@ -1,3 +1,4 @@
+require('dotenv').config();
 const path = require('path');
 const express = require('express');
 const hbs = require('hbs');
@@ -22,15 +23,16 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('', (req, res) =>{
   res.render('index', {
-    title: 'Weather',
-    name: 'Renee M'
+    title: 'Sky Watch',
+    showIcon: true,
+    name: 'Renee Messersmith'
   });
 })
 
 app.get('/about', (req, res) =>{
   res.render('about', {
-    title: 'About Me',
-    name: 'Renee M'
+    title: 'About',
+    name: 'Renee Messersmith'
   });
 })
 
@@ -38,7 +40,7 @@ app.get('/help', (req, res) =>{
   res.render('help', {
     title: 'Help',
     message: 'How to Use this Website',
-    name: 'Renee M'
+    name: 'Renee Messersmith'
   });
 })
 
@@ -49,12 +51,14 @@ app.get('/weather', (req, res) => {
     });
   }
 
+  const unit = req.query.unit || 'f';
+
   geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
     if (error) {
       return res.send({ error })
     }
 
-    forecast(latitude, longitude, (error, forecastData) => {
+    forecast(latitude, longitude, unit, (error, forecastData) => {
       if (error) {
         return res.send({ error })
       }
@@ -83,7 +87,7 @@ app.get('/weather', (req, res) => {
 app.get('/help/*path', (req, res) => {
   res.render('404', {
     title: '404 Help',
-    name: 'Renee M',
+    name: 'Renee Messersmith',
     errorMessage: 'Help article not found.'
   });
 })
@@ -91,7 +95,7 @@ app.get('/help/*path', (req, res) => {
 app.get('/*path', (req, res) => {
   res.render('404', {
     title: '404',
-    name: 'Renee M',
+    name: 'Renee Messersmith',
     errorMessage: 'Page not found.'
   });
 })

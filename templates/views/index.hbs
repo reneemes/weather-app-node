@@ -6,45 +6,52 @@
   <link rel="stylesheet" href="/css/styles.css"/>
   <link rel="icon" href="/img/weather.png">
   <script src="https://kit.fontawesome.com/fdf00391bb.js" crossorigin="anonymous"></script>
-  <title>Weather</title>
+  <title>Sky Watch</title>
 </head>
 <body>
   <div class="main-content">
     {{>header}}
     
-    <section class="weather-intro">
-      <h2>Check the Weather</h2>
-      <p>Enter a city or location below to get the current weather conditions.</p>
-    </section>
+    <div class="weather">
+      <section class="weather-intro">
+        <h2 class="weather-intro__title">Check the Weather</h2>
+        <p class="weather-intro__body">Enter a city or location below to get the current weather conditions.</p>
+      </section>
 
-    <form class="weather-form" aria-label="Weather search form">
-      <input
-        id="location"
-        name="location"
-        placeholder="Enter a city or location"
-        autocomplete="off"
-        required
-      >
-      <button type="submit">Search</button>
-      
-      <fieldset class="weather-form__options">
-        <legend>Temperature Units</legend>
+      <form class="weather-form" aria-label="Weather search form">
+        <input
+          id="location"
+          name="location"
+          placeholder="Enter a city or location"
+          autocomplete="off"
+          required
+        >
+        <button type="submit">Search</button>
+        
+        <fieldset class="weather-form__options">
+          <legend>Temperature Units</legend>
 
-        <input type="radio" id="fahrenheit" name="unit" value="fahrenheit" checked>
-        <label for="fahrenheit">Fahrenheit (°F)</label>
+          <input type="radio" id="fahrenheit" name="unit" value="f" checked>
+          <label for="fahrenheit">Fahrenheit (°F)</label>
 
-        <input type="radio" id="celsius" name="unit" value="celsius">
-        <label for="celsius">Celsius (°C)</label>
+          <input type="radio" id="celsius" name="unit" value="m">
+          <label for="celsius">Celsius (°C)</label>
 
-        <input type="radio" id="scientific" name="unit" value="scientific">
-        <label for="scientific">Scientific (K)</label>
-      </fieldset>
-    </form>
+          <input type="radio" id="scientific" name="unit" value="s">
+          <label for="scientific">Scientific (K)</label>
+        </fieldset>
+      </form>
 
-    <p id="message-one"></p>
-    <p id="message-two"></p>
+      <div class="weather-results">
+        <h3>Results:</h3>
+        {{!-- <p id="message-one"></p> --}}
+        <p>Charlotte, NC, USA</p>
+        {{!-- <p id="message-two"></p> --}}
+        <p>Sunny. It is currently 16 degrees out. It feels like 16 degrees out. The humidity is 39%.</p>
+      </div>
+    </div>
+
   </div>
-
   {{>footer}}
   <script src="/js/app.js"></script>
 </body>
