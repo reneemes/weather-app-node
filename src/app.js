@@ -39,7 +39,7 @@ app.get('/about', (req, res) =>{
 app.get('/help', (req, res) =>{
   res.render('help', {
     title: 'Help',
-    message: 'How to Use this Website',
+    message: 'How to Use This Website',
     name: 'Renee Messersmith'
   });
 })
@@ -73,6 +73,7 @@ app.get('/weather', (req, res) => {
   });
 })
 
+// Example endpoint from the tutorial. I'm not sure if it should be removed.
 // app.get('/products', (req, res) => {
 //   if (!req.query.search) {
 //     return res.send({

@@ -9,11 +9,16 @@ const forecast = (latitude, longitude, unit, callback) => {
     } else if (body.error) {
       callback('Unable to find location.', undefined);
     } else {
+      const unitLabel =
+        unit === 'm' ? '°C' :
+        unit === 's' ? 'K'  :
+        '°F';
+
       callback(
         undefined, `
         ${body.current.weather_descriptions[0]}. 
-        It is currently ${body.current.temperature} degrees out. 
-        It feels like ${body.current.feelslike} degrees out. 
+        It is currently ${body.current.temperature}${unitLabel} degrees out. 
+        It feels like ${body.current.feelslike}${unitLabel} degrees out. 
         The humidity is ${body.current.humidity}%.`);
     }
   });
